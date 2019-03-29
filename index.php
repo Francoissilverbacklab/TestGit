@@ -1,0 +1,1 @@
+You Need to <a href="login.php">log in</a> or <a href="register.php">register</a>!
