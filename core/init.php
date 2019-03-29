@@ -24,17 +24,4 @@ spl_auto_register(function($class){
 
 require_once 'functions/sanitize.php';
 
-/*
-require_once 'classes/config.php';
-require_once 'classes/cookie.php';
-require_once 'classes/db.php';
-require_once 'classes/hash.php';
-require_once 'classes/input.php';
-require_once 'classes/redirect.php';
-require_once 'classes/session.php';
-require_once 'classes/token.php';
-require_once 'classes/user.php';
-require_once 'classes/validation.php'
-*/
-
 ?>
