@@ -1,11 +1,11 @@
 <?php
-session_status();
+session_start();
 
 $GLOBALS['config'] = array(
 	'mysql' => array(
 		'host' => 'localhost',
 		'username' => 'root',
-		'password' => '',
+		'password' => 'root',
 		'db' => 'testing1'
 	),
 	'remember' => array(
