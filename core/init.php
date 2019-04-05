@@ -3,7 +3,7 @@ session_start();
 
 $GLOBALS['config'] = array(
 	'mysql' => array(
-		'host' => 'localhost',
+		'host' => '127.0.0.1',
 		'username' => 'root',
 		'password' => 'root',
 		'db' => 'testing1'
@@ -17,11 +17,9 @@ $GLOBALS['config'] = array(
 	)
 );
 
-spl_auto_register(function($class){
+spl_autoload_register(function($class){
 	require_once 'classes/' . $class . '.php';
 }) ;
 
 
 require_once 'functions/sanitize.php';
-
-?>

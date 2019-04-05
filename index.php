@@ -2,7 +2,7 @@
 require_once 'core/init.php';
 
 
-echo config::get('mysql/host'); // 'localhost'
+echo Config::get('mysql/host'); // 'localhost'
 
 
 ?>
