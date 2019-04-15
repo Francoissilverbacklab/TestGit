@@ -75,9 +75,5 @@ class DB {
 		return $this->_error;
 	}
 
-	public function count() {
-		return $this->_count;
-	}
-
 
 }
