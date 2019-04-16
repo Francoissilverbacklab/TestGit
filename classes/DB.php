@@ -46,11 +46,11 @@ class DB {
 
 	public function action($action, $table, $where = array()) {
 		if(count($where) === 3) {
-			$operators = array('=', '>', '<', '>=', '<=');
+			$operators = array('=', '>', '<', '>=', '<=', '!=');
 
-			$field		= '$where[0]';
-			$operator	= '$where[1]';
-			$value		= '$where[2]';
+			$field		= $where[0];
+			$operator	= $where[1];
+			$value		= $where[2];
 
 			if(in_array($operator, $operators)) {
 				$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
@@ -73,6 +73,10 @@ class DB {
 
 	public function error() {
 		return $this->_error;
+	}
+
+	public function count() {
+		return $this->_count;
 	}
 
 
