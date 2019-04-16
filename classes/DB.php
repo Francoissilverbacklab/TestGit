@@ -63,12 +63,20 @@ class DB {
 		return false;
 	}
 
+	public function results() {
+		return $this->_results;
+	}
+
 	public function get($table, $where) {
 		return $this->action('SELECT *', $table, $where);
 	}
 
 	public function delete($table, $where) {
 		return $this->action('DELETE', $table, $where);
+	}
+
+	public function first() {
+		return $this->results()[0];
 	}
 
 	public function error() {
