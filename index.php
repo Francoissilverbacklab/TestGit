@@ -1,10 +1,8 @@
 <?php
 require_once 'core/init.php';
 
-$user = DB::getInstance()->get('users', array('username', '=', 'alex'));
+$userInsert = DB::getInstance()->update('users', 3, array(
+	'password' => 'newpassword',
+	'name' => 'Dale Matthews'
 
-if($user->error()) {
-	echo 'No user';
-} else {
-	echo 'OK!';
-}
+));
