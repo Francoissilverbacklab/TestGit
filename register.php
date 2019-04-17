@@ -6,21 +6,21 @@ if(Input::exists()) {
 	$validate = new Validate();
 	$validation = $validate->check($_POST, array(
 		'username' =>  array(
-			'require' => true,
+			'required' => true,
 			'min' => 2,
 			'max' => 20,
 			'unique' => 'users'
 		),
 		'password' =>  array(
-			'require' => true,
+			'required' => true,
 			'min' => 6
 		),
 		'password_again' =>  array(
-			'require' => true,
+			'required' => true,
 			'matches' => 'password'
 		),
 		'name' =>  array(
-			'require' => true,
+			'required' => true,
 			'min' => 2,
 			'max' => 50
 		)
@@ -29,7 +29,9 @@ if(Input::exists()) {
 	if($validation->passed()) {
 		echo 'Passed';
 	} else {
-		print_r($validation->errors());
+		foreach ($validation->errors() as $error) {
+			echo $error, '<br>';
+		}
 	}
 }
 
@@ -38,7 +40,7 @@ if(Input::exists()) {
 <form action="" method="post">
 	<div class="field">
 		<label for="username">Username</label>
-		<input type="text" name="username" id="username" value="" autocomplete="off">
+		<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
 	</div>
 
 	<div class="field">
@@ -48,12 +50,12 @@ if(Input::exists()) {
 
 	<div class="field">
 		<label for="password_again">Enter your password again</label>
-		<input type="password_again" name="password_again" id="password_again">
+		<input type="password" name="password_again" id="password_again">
 	</div>
 
 	<div class="field">
 		<label for="name">Your name</label>
-		<input type="text" name="name" id="name" value="">
+		<input type="text" name="name" id="name" value="<?php echo escape(Input::get('name')); ?>">
 	</div>
 
 	<input type="submit" value="Register">
